@@ -6,12 +6,12 @@
 // Types imports
 import {
   GitHubResponseUser,
-  GithubUser,
+  User,
   GitHubResponseUserEvent,
   UserEvent,
 } from "./gitHubService.types";
 
-export const mapGitHubUser = (raw: GitHubResponseUser): GithubUser => {
+export const mapGitHubUser = (raw: GitHubResponseUser): User => {
   return {
     id: raw.login,
     name: raw.name,

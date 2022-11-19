@@ -6,9 +6,9 @@
 import { mapGitHubUser, mapGithubUserEvent } from "./gitHubService.dataMapping";
 
 // Types imports
-import { GithubUser, UserEvent } from "./gitHubService.types";
+import { User, UserEvent } from "./gitHubService.types";
 
-export const getGitHubUser = async (username: string): Promise<GithubUser> => {
+export const getGitHubUser = async (username: string): Promise<User> => {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`);
     if (!response.ok) throw new Error(await response.text());
