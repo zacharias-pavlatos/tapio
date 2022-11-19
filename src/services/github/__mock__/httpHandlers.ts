@@ -1,4 +1,11 @@
+/**
+ * @file http Handlers file
+ */
+
+// External imports
 import { rest } from "msw";
+
+// Internal imports
 import user from "./data/user.data.json";
 import userEvents from "./data/userEvents.data.json";
 import notFound from "./data/notFound.data.json";
@@ -22,7 +29,6 @@ export const handlers = [
   /*
    *   Handles a GET /users/{name}/events request
    */
-
   rest.get(`https://api.github.com/users/zak/events`, (_req, res, ctx) => {
     return res(ctx.delay(200), ctx.json(userEvents));
   }),
