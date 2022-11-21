@@ -1,2 +1,9 @@
-.root {
+.home {
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.home > form {
+  margin: 30px auto;
 }

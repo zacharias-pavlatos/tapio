@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  margin: 10px;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.imgCon {
+  margin-right: 20px;
+}
+
+.orgAvatar {
+  display: block;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+}
