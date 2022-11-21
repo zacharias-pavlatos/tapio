@@ -48,4 +48,12 @@ export const handlers = [
       return res(ctx.delay(200), ctx.status(403), ctx.json(rateLimitExceeded));
     }
   ),
+
+  // Rate limit
+  rest.get(
+    `https://api.github.com/users/no_events/events`,
+    (_req, res, ctx) => {
+      return res(ctx.delay(200), ctx.status(200), ctx.json([]));
+    }
+  ),
 ];

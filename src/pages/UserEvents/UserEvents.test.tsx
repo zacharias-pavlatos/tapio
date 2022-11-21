@@ -97,4 +97,30 @@ describe("Events page", () => {
 
     expect(await screen.findByText("Api limit reached")).toBeInTheDocument();
   });
+
+  it("Should be able to check for empty events", async () => {
+    render(
+      <MemoryRouter initialEntries={["/events/no_events"]}>
+        <Routes>
+          <Route
+            path="/events/:username"
+            element={
+              <SWRConfig
+                value={{ dedupingInterval: 0, provider: () => new Map() }}
+              >
+                <UserEvents />
+              </SWRConfig>
+            }
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    expect(await screen.findByText("loading")).toBeInTheDocument();
+    await waitForElementToBeRemoved(() => screen.queryByText("loading"));
+
+    expect(
+      await screen.findByText("No events for the user")
+    ).toBeInTheDocument();
+  });
 });

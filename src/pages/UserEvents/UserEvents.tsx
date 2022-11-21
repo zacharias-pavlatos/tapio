@@ -18,8 +18,8 @@ const UserEvents = () => {
 
   if (eventsError === 404) return <div>User not found</div>;
   if (eventsError === 403) return <div>Api limit reached</div>;
-
   if (eventsLoading) return <div>loading</div>;
+  if (!events?.length) return <div>No events for the user</div>;
 
   return (
     <div className={styles.root}>
